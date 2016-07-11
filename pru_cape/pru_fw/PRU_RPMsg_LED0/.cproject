@@ -8,14 +8,13 @@
 					<extension id="com.ti.ccstudio.errorparser.CoffErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.LinkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.PRU.Debug.1324144837" name="Debug" parent="com.ti.ccstudio.buildDefinitions.PRU.Debug" postbuildStep="" prebuildStep="">
 					<folderInfo id="com.ti.ccstudio.buildDefinitions.PRU.Debug.1324144837." name="/" resourcePath="">
-						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.DebugToolchain.202575180" name="TI Build Tools" secondaryOutputs="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.outputType__BIN" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.linkerDebug.436475204">
+						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.DebugToolchain.202575180" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.linkerDebug.436475204">
 							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1979606378" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
 								<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=TMS192C2026.AM3359.BeagleBone_Black"/>
 								<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
@@ -75,15 +74,9 @@
 								<inputType id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__CMD2_SRCS.1910591586" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__CMD2_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS.517054359" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS"/>
 							</tool>
-							<tool commandLinePattern="${command} ${flags} ${output_flag} ${output} ${inputs} ${PROJECT_LOC}/PRU_HexUtil.cmd" id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.1915036017" name="PRU Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex">
-								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE.2058578778" name="Enable tool" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE.1059418566" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE" value="&quot;PRU_RPMsg_LED0_image.obj&quot;" valueType="string"/>
-							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.1915036017" name="PRU Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex"/>
 						</toolChain>
 					</folderInfo>
-					<sourceEntries>
-						<entry excluding="PRU_HexUtil.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
@@ -95,14 +88,13 @@
 					<extension id="com.ti.ccstudio.errorparser.CoffErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.LinkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.PRU.Release.1122970888" name="Release" parent="com.ti.ccstudio.buildDefinitions.PRU.Release" postbuildStep="" prebuildStep="">
 					<folderInfo id="com.ti.ccstudio.buildDefinitions.PRU.Release.1122970888." name="/" resourcePath="">
-						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.ReleaseToolchain.951249641" name="TI Build Tools" secondaryOutputs="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.outputType__BIN" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.ReleaseToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.linkerRelease.1174242462">
+						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.ReleaseToolchain.951249641" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.ReleaseToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.linkerRelease.1174242462">
 							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1194371601" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
 								<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=TMS192C2026.AM3359.BeagleBone_Black"/>
 								<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
@@ -161,15 +153,9 @@
 								<inputType id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__CMD2_SRCS.492606499" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__CMD2_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS.914046516" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS"/>
 							</tool>
-							<tool commandLinePattern="${command} ${flags} ${output_flag} ${output} ${inputs} ${PROJECT_LOC}/PRU_HexUtil.cmd" id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.1334930688" name="PRU Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex">
-								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE.129057075" name="Enable tool" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE.2146105643" name="Specify output file names (--outfile, -o=file)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE" value="&quot;PRU_RPMsg_LED0_image.obj&quot;" valueType="string"/>
-							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.1334930688" name="PRU Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex"/>
 						</toolChain>
 					</folderInfo>
-					<sourceEntries>
-						<entry excluding="PRU_HexUtil.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>

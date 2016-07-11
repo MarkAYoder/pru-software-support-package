@@ -33,6 +33,8 @@
 
 #include <stdint.h>
 #include <pru_cfg.h>
+#include "resource_table_empty.h"
+
 /*TODO: Include intc.h */
 #include <pru_intc.h>
 
@@ -57,6 +59,7 @@ void main(void)
 	/* Spin in loop until interrupt on HOST 1 is detected */
 	while (1) {
 		if (__R31 & HOST1_MASK) {
+		// if (__R31) {
 			TOGGLE_BLUE;
 			/* Clear interrupt event */
 			CT_INTC.SICR = 16; /*TODO: Clear event 16*/;

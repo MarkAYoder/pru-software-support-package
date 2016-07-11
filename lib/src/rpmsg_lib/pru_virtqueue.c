@@ -69,8 +69,8 @@ void pru_virtqueue_init(
 
 int16_t pru_virtqueue_get_avail_buf(
     struct pru_virtqueue	*vq,
-    void			**buf,
-    uint32_t			*len
+    void					**buf,
+    uint32_t				*len
 )
 {
 	int16_t			head;
@@ -98,13 +98,13 @@ int16_t pru_virtqueue_get_avail_buf(
 
 int16_t pru_virtqueue_add_used_buf(
     struct pru_virtqueue	*vq,
-    int16_t			head,
-    uint32_t			len
+    int16_t				head,
+    uint32_t				len
 )
 {
 	struct vring_used_elem	*used_elem;
-	uint32_t		num;
-	struct vring_used	*used;
+	uint32_t				num;
+	struct vring_used		*used;
 
 	num = vq->vring.num;
 	used = vq->vring.used;

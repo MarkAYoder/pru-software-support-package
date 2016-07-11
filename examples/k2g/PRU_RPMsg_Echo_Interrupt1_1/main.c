@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Texas Instruments Incorporated - http://www.ti.com/
+ * Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com/
  *
  *
  * Redistribution and use in source and binary forms, with or without
@@ -35,34 +35,35 @@
 #include <stdio.h>
 #include <pru_intc.h>
 #include <rsc_types.h>
+#include <pru_virtqueue.h>
 #include <pru_rpmsg.h>
 #include "resource_table_1.h"
 
 volatile register uint32_t __R31;
 
 /* Host-1 Interrupt sets bit 31 in register R31 */
-#define HOST_INT			((uint32_t) 1 << 31)
+#define HOST_INT					((uint32_t) 1 << 31)
 
 /* The PRU-ICSS system events used for RPMsg are defined in the Linux device tree
  * PRU0 uses system event 16 (To ARM) and 17 (From ARM)
  * PRU1 uses system event 18 (To ARM) and 19 (From ARM)
  */
-#define TO_ARM_HOST			18
+#define TO_ARM_HOST				18	
 #define FROM_ARM_HOST			19
 
 /*
  * Using the name 'rpmsg-pru' will probe the rpmsg_pru driver found
  * at linux-x.y.z/drivers/rpmsg/rpmsg_pru.c
  */
-#define CHAN_NAME			"rpmsg-pru"
-#define CHAN_DESC			"Channel 33"
-#define CHAN_PORT			33
+#define CHAN_NAME						"rpmsg-pru"
+#define CHAN_DESC						"Channel 33"
+#define CHAN_PORT						33
 
 /*
  * Used to make sure the Linux drivers are ready for RPMsg communication
  * Found at linux-x.y.z/include/uapi/linux/virtio_config.h
  */
-#define VIRTIO_CONFIG_S_DRIVER_OK	4
+#define VIRTIO_CONFIG_S_DRIVER_OK		4
 
 uint8_t payload[RPMSG_BUF_SIZE];
 
@@ -82,9 +83,12 @@ void main(void)
 	status = &resourceTable.rpmsg_vdev.status;
 	while (!(*status & VIRTIO_CONFIG_S_DRIVER_OK));
 
-	/* Initialize the RPMsg transport structure */
-	pru_rpmsg_init(&transport, &resourceTable.rpmsg_vring0, &resourceTable.rpmsg_vring1, TO_ARM_HOST, FROM_ARM_HOST);
+	/* Initialize pru_virtqueue corresponding to vring0 (PRU to ARM Host direction) */
+	pru_virtqueue_init(&transport.virtqueue0, &resourceTable.rpmsg_vring0, TO_ARM_HOST, FROM_ARM_HOST);
 
+	/* Initialize pru_virtqueue corresponding to vring1 (ARM Host to PRU direction) */
+	pru_virtqueue_init(&transport.virtqueue1, &resourceTable.rpmsg_vring1, TO_ARM_HOST, FROM_ARM_HOST);
+	
 	/* Create the RPMsg channel between the PRU and ARM user space using the transport structure. */
 	while (pru_rpmsg_channel(RPMSG_NS_CREATE, &transport, CHAN_NAME, CHAN_DESC, CHAN_PORT) != PRU_RPMSG_SUCCESS);
 	while (1) {

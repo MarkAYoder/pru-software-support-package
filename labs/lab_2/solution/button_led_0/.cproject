@@ -8,7 +8,6 @@
 					<extension id="com.ti.ccstudio.errorparser.CoffErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.LinkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
@@ -75,7 +74,7 @@
 								<inputType id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS.1563241930" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS"/>
 							</tool>
 							<tool id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.862274071" name="PRU Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex">
-								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE.1995530561" name="Specify output file names (--outfile, -o=file)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE" value="&quot;${BuildArtifactFileBaseName}.hex&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE.1995530561" name="Specify output file names (--outfile, -o)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE" value="&quot;${BuildArtifactFileBaseName}.hex&quot;" valueType="string"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
@@ -93,7 +92,6 @@
 					<extension id="com.ti.ccstudio.errorparser.CoffErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.LinkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>

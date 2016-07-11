@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Texas Instruments Incorporated - http://www.ti.com/
+ * Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com/
  *
  *
  * Redistribution and use in source and binary forms, with or without
@@ -36,6 +36,7 @@
 #include <pru_cfg.h>
 #include <pru_intc.h>
 #include <rsc_types.h>
+#include <pru_virtqueue.h>
 #include <pru_rpmsg.h>
 #include "resource_table_0.h"
 
@@ -49,21 +50,21 @@ volatile register uint32_t __R31;
  * PRU0 uses system event 16 (To ARM) and 17 (From ARM)
  * PRU1 uses system event 18 (To ARM) and 19 (From ARM)
  */
-#define TO_ARM_HOST			16	
-#define FROM_ARM_HOST			17
+#define TO_ARM_HOST					18
+#define FROM_ARM_HOST				19
 
-#define BLUE				0x1
-#define GREEN				0x2
-#define ORANGE				0x4
-#define RED				0x8
+#define BLUE						0x1
+#define GREEN						0x2
+#define ORANGE						0x4
+#define RED							0x8
 
 /*
 * Using the name 'rpmsg-pru' will probe the rpmsg_pru driver found
 * at linux-x.y.z/drivers/rpmsg/rpmsg_pru.c
 */
-#define CHAN_NAME			"rpmsg-pru"
-#define CHAN_DESC			"Channel 30"
-#define CHAN_PORT			30
+#define CHAN_NAME					"rpmsg-pru"
+#define CHAN_DESC					"Channel 30"
+#define CHAN_PORT					30
 
 /*
  * Used to make sure the Linux drivers are ready for RPMsg communication
@@ -94,8 +95,11 @@ void main(void)
 	status = &resourceTable.rpmsg_vdev.status;
 	while (!(*status & VIRTIO_CONFIG_S_DRIVER_OK));
 
-	/* Initialize the RPMsg transport structure */
-	pru_rpmsg_init(&transport, &resourceTable.rpmsg_vring0, &resourceTable.rpmsg_vring1, TO_ARM_HOST, FROM_ARM_HOST);
+	/* Initialize pru_virtqueue corresponding to vring0 (PRU to ARM Host direction) */
+	pru_virtqueue_init(&transport.virtqueue0, &resourceTable.rpmsg_vring0, TO_ARM_HOST, FROM_ARM_HOST);
+
+	/* Initialize pru_virtqueue corresponding to vring1 (ARM Host to PRU direction) */
+	pru_virtqueue_init(&transport.virtqueue1, &resourceTable.rpmsg_vring1, TO_ARM_HOST, FROM_ARM_HOST);
 
 	/* Create the RPMsg channel between the PRU and ARM user space using the transport structure. */
 	while (pru_rpmsg_channel(RPMSG_NS_CREATE, &transport, CHAN_NAME, CHAN_DESC, CHAN_PORT) != PRU_RPMSG_SUCCESS);

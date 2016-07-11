@@ -33,6 +33,8 @@
 
 #include <stdint.h>
 #include <pru_cfg.h>
+#include "resource_table_empty.h"
+
 /*TODO: Include intc.h */
 #include <pru_intc.h>
 
@@ -96,9 +98,10 @@ void main(void)
 		/* Wait for SW1 to be pressed */
 		if ((__R31 & SW1) != SW1) {
 			/* Interrupt PRU1, wait 500ms for cheap "debounce" */
-			__delay_cycles(100000000);
+			__delay_cycles(10000000);
 			/* TODO: Trigger interrupt - see #defines */
 			PRU0_PRU1_TRIGGER;
+			// __R30 ^= (1 << 3);
 		}
 	}
 }

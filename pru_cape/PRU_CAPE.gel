@@ -29,7 +29,7 @@ hotmenu PRU_Cape_Init()
 
 hotmenu PRU_PINMUX_Config()
 {
-
+	
 	GEL_TextOut("****** PRU Cape PINMUX is being configured  ***** \n","Output",1,1,1);
 
 //**********************************************************
@@ -37,25 +37,25 @@ hotmenu PRU_PINMUX_Config()
 //**********************************************************
 
 	// D1 Blue LED = pr1_pru0_gpo0  (MCASP0_ACLKX - mode 5)
-	*((unsigned int*) 0x44e10990) = AM335X_PIN_OUTPUT | 5;
+	*((unsigned int*) 0x44e10990) = AM335X_PIN_OUTPUT | 5; 
 
 	// D2 Green LED = pr1_pru0_gpo1 (MCASP0_FSX - mode 5)
-	*((unsigned int*) 0x44e10994) = AM335X_PIN_OUTPUT | 5;
+	*((unsigned int*) 0x44e10994) = AM335X_PIN_OUTPUT | 5; 
 
 	// D3 Orange LED = pr1_pru0_gpo2 (MCASP0_AXR0 - mode 5)
-	*((unsigned int*) 0x44e10998) = AM335X_PIN_OUTPUT | 5;
+	*((unsigned int*) 0x44e10998) = AM335X_PIN_OUTPUT | 5; 
 
-	// D4 Red LED = pr1_pru0_gpo3 (MCASP0_AHCLKR - mode 5)
-	*((unsigned int*) 0x44e1099c) = AM335X_PIN_OUTPUT | 5;
+	// D4 Red LED = pr1_pru0_gpo3 (MCASP0_AHCLKR - mode 5)  
+	*((unsigned int*) 0x44e1099c) = AM335X_PIN_OUTPUT | 5; 
 
 	// D5 Blue LED / D8 RGY_y LED = pr1_pru1_gpo3 (LCD_DATA3 - mode 5)
-	*((unsigned int*) 0x44e108AC) = AM335X_PIN_OUTPUT | 5;
+	*((unsigned int*) 0x44e108AC) = AM335X_PIN_OUTPUT | 5; 
 
 	// D6 Green LED / D8 RGY_g LED = pr1_pru1_gpo4 (LCD_DATA4 - mode 5)
-	*((unsigned int*) 0x44e108B0) = AM335X_PIN_OUTPUT | 5;
-
+	*((unsigned int*) 0x44e108B0) = AM335X_PIN_OUTPUT | 5; 
+	
 	// D7 Red LED / D8 RGY (Red) LED = pr1_pru1_gpo5 (LCD_DATA5 - mode 5)
-	*((unsigned int*) 0x44e108B4) = AM335X_PIN_OUTPUT | 5;
+	*((unsigned int*) 0x44e108B4) = AM335X_PIN_OUTPUT | 5; 
 
 
 //**********************************************************
@@ -63,7 +63,7 @@ hotmenu PRU_PINMUX_Config()
 //**********************************************************
 
 	// SW1 = pr1_pru0_gpi5  (MCASP0_FSR - mode 6)
-	*((unsigned int*) 0x44e109a4) = AM335X_PIN_INPUT | 6;
+	*((unsigned int*) 0x44e109a4) = AM335X_PIN_INPUT | 6; 
 
 	// SW2 = pr1_pru0_gpi7  (MCASP0_AHCLKX - mode 6)
 	*((unsigned int*) 0x44e109ac) = AM335X_PIN_INPUT | 6;
@@ -73,14 +73,14 @@ hotmenu PRU_PINMUX_Config()
 // 					Audio
 //**********************************************************
 
-	// U2 Audio DIN = pr1_pru1_gpo0 	 (LCD_DATA0 - mode 5)
+	// U2 Audio DIN = pr1_pru1_gpo0 	 (LCD_DATA0 - mode 5) 
 	*((unsigned int*) 0x44e108a0) = AM335X_PIN_OUTPUT | 5;
 
 	// U2 Audio SCLK = pr1_pru1_gpo1  (LCD_DATA1 - mode 5)
 	*((unsigned int*) 0x44e108a4) = AM335X_PIN_OUTPUT | 5;
 
 	// U2 Audio SYNCn = pr1_pru1_gpo2  (LCD_DATA2 - mode 5)
-	*((unsigned int*) 0x44e108a8) = AM335X_PIN_OUTPUT | 5;
+	*((unsigned int*) 0x44e108a8) = AM335X_PIN_OUTPUT | 5; 
 
 
 //**********************************************************
@@ -88,16 +88,16 @@ hotmenu PRU_PINMUX_Config()
 //**********************************************************
 
 	// U1 UART TXD = pr1_uart0_txd  (UART1_TXD - mode 5)
-	*((unsigned int*) 0x44e10984) = AM335X_PIN_OUTPUT | 5;
+	*((unsigned int*) 0x44e10984) = AM335X_PIN_OUTPUT | 5; 
 
 	// U1 UART RXD = pr1_uart0_rxd  (UART_RXD - mode 5)
-	*((unsigned int*) 0x44e10980) = AM335X_PIN_INPUT | 5;
+	*((unsigned int*) 0x44e10980) = AM335X_PIN_INPUT | 5; 
 
 	// U1 UART RTS = pr1_uart0_rts  (SPI0_D0 - mode 4)
-	*((unsigned int*) 0x44e1097C) = AM335X_PIN_OUTPUT | 4;
+	*((unsigned int*) 0x44e1097C) = AM335X_PIN_OUTPUT | 4; 
 
 	// U1 UART CTS = pr1_uart0_cts  (SPI0_SCLK - mode 4)
-	*((unsigned int*) 0x44e10978) = AM335X_PIN_INPUT | 4;
+	*((unsigned int*) 0x44e10978) = AM335X_PIN_INPUT | 4; 
 
 
 //**********************************************************
@@ -105,23 +105,23 @@ hotmenu PRU_PINMUX_Config()
 //**********************************************************
 
 	// J5 LCD_RS = pr1_edio_data_out6  (LCD_DATA6 - mode 4)
-	*((unsigned int*) 0x44e108B8) = AM335X_PIN_OUTPUT | 4;
+	*((unsigned int*) 0x44e108B8) = AM335X_PIN_OUTPUT | 4; 
 
 	// J5 LCD_E = pr1_edio_data_out4  (LCD_PCLK - mode 4)
-	*((unsigned int*) 0x44e108E8) = AM335X_PIN_OUTPUT | 4;
+	*((unsigned int*) 0x44e108E8) = AM335X_PIN_OUTPUT | 4; 
 
 	//J5 LCD_DATA4 = pr1_edio_data_out0  (SPI0_D1 - mode 6)
-	*((unsigned int*) 0x44e10958) = AM335X_PIN_OUTPUT | 6;
+	*((unsigned int*) 0x44e10958) = AM335X_PIN_OUTPUT | 6; 
 
 	// J5 LCD_DATA5 = pr1_edio_data_out1  (SPI0_CS0 - mode 6)
-	*((unsigned int*) 0x44e1095C) = AM335X_PIN_OUTPUT | 6;
+	*((unsigned int*) 0x44e1095C) = AM335X_PIN_OUTPUT | 6; 
 
 	// J5 LCD_DATA6 = pr1_edio_data_out2  (LCD_VSYNC	- mode 4)
-	*((unsigned int*) 0x44e108e0) = AM335X_PIN_OUTPUT | 4;
+	*((unsigned int*) 0x44e108e0) = AM335X_PIN_OUTPUT | 4; 
 
 	// J5 LCD_DATA7 = pr1_edio_data_out3  (LCD_HSYNC 	- mode 4)
-	*((unsigned int*) 0x44e108e4) = AM335X_PIN_OUTPUT | 4;
-
+	*((unsigned int*) 0x44e108e4) = AM335X_PIN_OUTPUT | 4; 
+	
 
 //**********************************************************
 // 					TEMP SENSOR
@@ -138,18 +138,18 @@ hotmenu PRU_PINMUX_Config()
 
 hotmenu PRU_PRCM_Enable()
 {
-
+	
 	GEL_TextOut("\t****** Enabling PRU-ICSS clock ****** \n","Output",1,1,1);
 
 	*((unsigned int*) 0x44E000E8 ) |= 0x02;	// enabling the pru-icss module taking it out of idle
 
 	//CSS_Reset();
-
+	
 }
 
 hotmenu PRU_ICSS_Reset()
 {
-
+	
 	GEL_TextOut("*\t***** Reseting the PRU-ICSS   ******\n","Output",1,1,1);
 
 	*((unsigned int*) 0x44E00C00 ) |= 0x2;
@@ -202,7 +202,7 @@ hotmenu PRU0_1_Start()
 
 	GEL_TextOut("*\t***** Starting PRU 1  ******\n","Output",1,1,1);
 	*((unsigned int*) 0x4a324000) = 0x2;
-
+	
 }
 
 hotmenu ENABLE_ECAP_LOOP()

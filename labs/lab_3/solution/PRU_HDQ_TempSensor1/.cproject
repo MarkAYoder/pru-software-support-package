@@ -8,14 +8,13 @@
 					<extension id="com.ti.ccstudio.errorparser.CoffErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.LinkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.PRU.Debug.846489248" name="Debug" parent="com.ti.ccstudio.buildDefinitions.PRU.Debug" postbuildStep="" prebuildStep="">
 					<folderInfo id="com.ti.ccstudio.buildDefinitions.PRU.Debug.846489248." name="/" resourcePath="">
-						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.DebugToolchain.250674834" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.linkerDebug.163045546">
+						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.DebugToolchain.250674834" name="TI Build Tools" secondaryOutputs="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.outputType__BIN" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.linkerDebug.163045546">
 							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.226269737" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
 								<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=TMS192C2026.AM3359.BeagleBone_Black"/>
 								<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
@@ -74,13 +73,13 @@
 								<inputType id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS.125617613" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS"/>
 							</tool>
 							<tool commandLinePattern="${command} ${flags} ${output_flag} ${output} ${inputs}  ${PROJECT_LOC}/PRU_HexUtil.cmd" id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.824677108" name="PRU Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex">
-								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE.1704480847" name="Enable tool" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE" value="false" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE.1102542209" name="Specify output file names (--outfile, -o=file)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE" value="&quot;PRU_HDQ_TempSensor1_image.obj&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE.1704480847" name="Enable tool" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE.1102542209" name="Specify output file names (--outfile, -o)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE" value="&quot;PRU_HDQ_TempSensor1_image.obj&quot;" valueType="string"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="AM335x.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="AM335x.cmd|PRU_HexUtil.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -93,14 +92,13 @@
 					<extension id="com.ti.ccstudio.errorparser.CoffErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.LinkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.errorparser.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.PRU.Release.599885446" name="Release" parent="com.ti.ccstudio.buildDefinitions.PRU.Release" postbuildStep="" prebuildStep="">
 					<folderInfo id="com.ti.ccstudio.buildDefinitions.PRU.Release.599885446." name="/" resourcePath="">
-						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.ReleaseToolchain.2029201446" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.ReleaseToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.linkerRelease.1249033200">
+						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.ReleaseToolchain.2029201446" name="TI Build Tools" secondaryOutputs="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.outputType__BIN" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.ReleaseToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.1.exe.linkerRelease.1249033200">
 							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1488993833" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
 								<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=TMS192C2026.AM3359.BeagleBone_Black"/>
 								<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
@@ -157,13 +155,13 @@
 								<inputType id="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS.999050865" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.exeLinker.inputType__GEN_CMDS"/>
 							</tool>
 							<tool commandLinePattern="${command} ${flags} ${output_flag} ${output} ${inputs}  ${PROJECT_LOC}/PRU_HexUtil.cmd" id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.793308170" name="PRU Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex">
-								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE.596749302" name="Specify output file names (--outfile, -o=file)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE" value="&quot;PRU_HDQ_TempSensor1_image.obj&quot;" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE.285149719" name="Enable tool" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE" value="false" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE.596749302" name="Specify output file names (--outfile, -o)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.OUTPUT_FILE" value="&quot;PRU_HDQ_TempSensor1_image.obj&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE.285149719" name="Enable tool" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.1.hex.TOOL_ENABLE" value="true" valueType="boolean"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="AM335x.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="AM335x.cmd|PRU_HexUtil.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
